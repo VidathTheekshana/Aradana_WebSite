@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --aradana-gold: #FFD700;
+  --aradana-amber: #FFC870;
+  --aradana-blue: #0050FF;
+  --aradana-cyan: #00D6FF;
+  --aradana-dark: #0A0A0C;
+  --aradana-muted: rgba(255, 255, 255, 0.6);
+  
+  /* Gradients */
+  --bg-gradient: radial-gradient(circle farthest-corner at 3.2% 49.6%, rgba(80,12,139,0.87) 0%, rgba(161,10,144,0.72) 83.6%);
+  
+  /* Semantic Colors */
+  --background: var(--aradana-dark);
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  --color-aradana-gold: var(--aradana-gold);
+  --color-aradana-amber: var(--aradana-amber);
+  --color-aradana-blue: var(--aradana-blue);
+  --color-aradana-cyan: var(--aradana-cyan);
+  --color-aradana-dark: var(--aradana-dark);
+  --color-aradana-muted: var(--aradana-muted);
+  
+  --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--background);
+  background: var(--aradana-dark);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Animated gradient utility for headings using bg-clip-text */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  animation: gradientShift 6s ease infinite;
+  background-size: 200% auto;
 }
