@@ -8,7 +8,7 @@ const menuCategories = [
   {
     title: "Weddings & Parties",
     description: "Elegant courses designed for grand celebrations.",
-    image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop",
+    image: "/images/localized/wedding-party-category.jpg",
     items: [
       { name: "Grilled Lamb Chops", detail: "with Rosemary Jus" },
       { name: "Herb-Crusted Salmon", detail: "Citrus Beurre Blanc" },
@@ -18,7 +18,7 @@ const menuCategories = [
   {
     title: "Dana & Bana",
     description: "Traditional offerings prepared with reverence and authentic spices.",
-    image: "https://images.unsplash.com/photo-1626071477218-1d2a1b3b3b4c?q=80&w=1974&auto=format&fit=crop", // Abstract/Texture as placement
+    image: "/images/localized/dana-bana-category.jpg", // Abstract/Texture as placement
     items: [
       { name: "Kiribath", detail: "with Lunu Miris" },
       { name: "Pol Sambol", detail: "& Coconut Roti" },
@@ -28,7 +28,7 @@ const menuCategories = [
   {
     title: "Funerals",
     description: "Comforting, warm meals served with dignity.",
-    image: "https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/localized/chef-ingredients.jpg",
     items: [
       { name: "Vegetable Stew", detail: "Hearty & Warm" },
       { name: "Spiced Chicken Curry", detail: "Authentic Blend" },
@@ -38,7 +38,7 @@ const menuCategories = [
   {
     title: "Hoppers & Kottu",
     description: "Live action stations bringing street food to luxury events.",
-    image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=2071&auto=format&fit=crop",
+    image: "/images/localized/hoppers-kottu-category.jpg",
     items: [
       { name: "Egg Hoppers", detail: "Crispy Edges" },
       { name: "Chicken Kottu", detail: "with Cashew Nuts" },
@@ -48,7 +48,7 @@ const menuCategories = [
    {
     title: "Bites & Appetizers",
     description: "Perfect starters for cocktail hours and receptions.",
-    image: "https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/localized/bites-appetizers-category.jpg",
     items: [
       { name: "Mini Lamb Patties", detail: "Spiced Mint Yogurt" },
       { name: "Veg Spring Rolls", detail: "Sweet Chili Dip" },
@@ -58,7 +58,7 @@ const menuCategories = [
   {
     title: "BBQ & Grilled",
     description: "Smoky flavors and perfectly charred cuts.",
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1974&auto=format&fit=crop",
+    image: "/images/localized/bbq-grilled-category.jpg",
     items: [
       { name: "Grilled Prawns", detail: "Garlic Butter Glaze" },
       { name: "BBQ Chicken Skewers", detail: "Sticky Honey Soy" },
@@ -75,7 +75,7 @@ export default function MenusPage() {
 
          <div className="absolute inset-0 z-0">
                 <Image 
-                    src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop"
+                    src="/images/localized/menu-hero-bg.jpg"
                     alt="Menu Background"
                     fill
                     className="object-cover brightness-50"

@@ -46,7 +46,7 @@ export default function AboutPage() {
 
           <motion.div style={{ y: yHero }} className="absolute inset-0 z-0">
               <Image 
-                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop"
+                src="/images/localized/matching-about.jpg"
                 alt="Chefs Plating Food"
                 fill
                 className="object-cover opacity-50"
@@ -139,7 +139,7 @@ export default function AboutPage() {
                >
                    <div className="absolute inset-0 bg-aradana-gold/10 rounded-2xl transform rotate-3" />
                    <Image 
-                     src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=2070&auto=format&fit=crop"
+                     src="/images/localized/about-detail.jpg"
                      alt="Visionary Cuisine"
                      fill
                      className="object-cover rounded-2xl shadow-2xl relative z-10"
@@ -160,7 +160,7 @@ export default function AboutPage() {
                <div className="h-24 w-[1px] bg-white/20 hidden md:block" />
                <div>
                    <div className="text-6xl md:text-8xl font-bold text-aradana-gold mb-2">
-                       <Counter value={2000} />+
+                       <Counter value={1500} />+
                    </div>
                    <p className="text-white text-xl tracking-widest uppercase">Events Hosted</p>
                </div>

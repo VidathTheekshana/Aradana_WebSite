@@ -10,27 +10,27 @@ const eventTypes = [
   {
     title: "Weddings & Parties",
     description: "From intimate garden ceremonies to grand ballroom receptions, we craft wedding experiences that are as unique as your love story. Our team handles every detail, ensuring you can savor every moment of your special day.",
-    image: "https://images.unsplash.com/photo-1519225468359-2996bc15e527?q=80&w=2070&auto=format&fit=crop", 
+    image: "/images/localized/wedding.jpg", 
   },
   {
-    title: "Corporate Events",
-    description: "Impress clients and colleagues with impeccable service and sophisticated menus. Whether it's a product launch, gala dinner, or executive luncheon, we deliver professional excellence with a touch of luxury.",
-    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop",
+    title: "BBQ Nights",
+    description: "Experience the theatre of live grilling with smoky aromas and flame-kissed perfection. From premium meats to fresh seafood, our BBQ nights bring warmth, flavor, and unforgettable atmosphere to your event.",
+    image: "/images/localized/bbq.jpg",
   },
   {
-    title: "Private Dinners",
-    description: "Elevate your home gathering with a private chef experience. We bring fine dining to your table, curating bespoke menus that reflect your personal taste and style.",
-    image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop",
+    title: "Hoppers & Kottu Live Action",
+    description: "EFreshly made, right before your eyes. From crispy hoppers to rhythmic kottu action, our live stations bring authentic Sri Lankan street flavors with a refined, event-ready touch.",
+    image: "/images/localized/live_stations.jpg",
   }
 ];
 
 const galleryImages = [
-    "https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=2071&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1974&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=2069&auto=format&fit=crop",
+    "/images/localized/hoppers-kottu-category.jpg",
+    "/images/localized/menu-hero-bg.jpg",
+    "/images/localized/hero-spread.jpg",
+    "/images/localized/salad-detail.jpg",
+    "/images/localized/gallery-5.jpg",
+    "/images/localized/gallery-6.jpg",
 ];
 
 export default function EventsPage() {
@@ -52,14 +52,14 @@ export default function EventsPage() {
           
           {/* Background Layer - Optimized with will-change */}
           <motion.div style={{ y: yBg }} className="absolute inset-0 z-0 will-change-transform">
-             <Image 
-                src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop"
-                alt="Luxury Event Setup"
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover opacity-60"
-             />
+                <Image 
+                    src="/images/localized/events-hero-bg.jpg"
+                    alt="Luxury Event Setup"
+                    fill
+                    priority
+                    sizes="100vw"
+                    className="object-cover opacity-60"
+                 />
              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-aradana-dark" />
           </motion.div>
 
@@ -155,7 +155,7 @@ export default function EventsPage() {
        <section className="relative py-40 flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <Image 
-                    src="https://images.unsplash.com/photo-1530103862676-de3c9da59af7?q=80&w=2070&auto=format&fit=crop"
+                    src="/images/localized/celebration-toast.jpg"
                     alt="Celebration Toast"
                     fill
                     sizes="100vw"

@@ -23,14 +23,19 @@ export function Footer() {
         </div>
 
         {/* Socials */}
-        <div className="flex gap-6">
-           {/* Facebook */}
-           <a href="#" className="text-aradana-muted hover:text-aradana-gold transition-colors">
-              <span className="sr-only">Facebook</span>
-              <svg className="h7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg>
-            </a>
+       <div className="flex gap-6">
+  {/* Facebook */}
+  <a 
+    href="https://www.facebook.com/share/16zZbFdPgR/?mibextid=wwXIfr"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-aradana-muted hover:text-aradana-gold transition-colors"
+  >
+    <span className="sr-only">Facebook</span>
+    <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  </a>
 
            {/* Google */}
            <a href="#" className="text-aradana-muted hover:text-aradana-gold transition-colors">
@@ -41,12 +46,17 @@ export function Footer() {
             </a>
 
             {/* Gmail */}
-            <a href="#" className="text-aradana-muted hover:text-aradana-gold transition-colors">
-               <span className="sr-only">Gmail</span>
-               <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                   <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
-               </svg>
-            </a>
+<a 
+  href="mailto:wasanthakota@gmail.com?subject=Aradana%20Catering%20Inquiry&body=Hello%20Aradana%20Team,%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services."
+
+  className="text-aradana-muted hover:text-aradana-gold transition-colors"
+>
+  <span className="sr-only">Gmail</span>
+  <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+  </svg>
+</a>
+
         </div>
       </div>
     </footer>

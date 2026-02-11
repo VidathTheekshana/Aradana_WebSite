@@ -54,7 +54,7 @@ export function Ingredients() {
         <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
            <motion.div style={{ y }} className="absolute inset-0 h-[120%] -top-[10%]">
              <Image
-               src="https://images.unsplash.com/photo-1547592180-85f173990554?q=80&w=2070&auto=format&fit=crop"
+               src="/images/localized/chef-ingredients.jpg"
                alt="Chef preparing fresh ingredients"
                fill
                className="object-cover"

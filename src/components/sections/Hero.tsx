@@ -22,7 +22,7 @@ export function Hero() {
         className="absolute inset-0 z-0"
       >
         <Image
-          src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop"
+          src="/images/localized/hero-spread.jpg"
           alt="Luxury Catering Spread"
           fill
           priority

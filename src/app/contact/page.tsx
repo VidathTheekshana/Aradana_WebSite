@@ -22,7 +22,7 @@ export default function ContactPage() {
           {/* Parallax Background */}
           <motion.div style={{ y: yHero }} className="absolute inset-0 z-0">
               <Image 
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=2074&auto=format&fit=crop"
+                src="/images/localized/contact-hero-bg.jpg"
                 alt="Professional Consultation"
                 fill
                 priority
@@ -163,6 +163,7 @@ export default function ContactPage() {
                              <div>
                                  <h3 className="text-xl text-white font-semibold mb-2">Phone</h3>
                                  <p className="text-aradana-muted">+94 77 932 1079</p>
+                                  <p className="text-aradana-muted">+94 77 534 7164</p>
                              </div>
                         </div>
 

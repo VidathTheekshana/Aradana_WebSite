@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Events() {
   const containerRef = useRef(null);
@@ -18,7 +19,7 @@ export function Events() {
       {/* Parallax Background */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 h-[120%] -top-[10%]">
         <Image
-          src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=2098&auto=format&fit=crop"
+          src="/images/localized/luxury-event.jpg"
           alt="Luxury Event Setup"
           fill
           className="object-cover brightness-50"
@@ -54,9 +55,12 @@ export function Events() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="pt-8"
             >
-                <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-aradana-dark transition-all duration-300">
+                <Link 
+                  href="/contact"
+                  className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-aradana-dark transition-all duration-300"
+                >
                     Plan Your Event
-                </button>
+                </Link>
             </motion.div>
         </div>
       </div>

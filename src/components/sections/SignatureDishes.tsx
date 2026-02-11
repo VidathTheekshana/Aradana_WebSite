@@ -6,19 +6,19 @@ import Image from "next/image";
 
 const dishes = [
   {
-    src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1974&auto=format&fit=crop",
+    src: "/images/localized/signature-entree.jpg",
     alt: "Signature Entree",
     yRange: ["0%", "-20%"],
     className: "z-20 w-3/4 md:w-2/3 shadow-2xl rounded-lg translate-x-10",
   },
   {
-    src: "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=1974&auto=format&fit=crop",
+    src: "/images/localized/salad-detail.jpg",
     alt: "Fresh Salad Detail",
     yRange: ["20%", "-10%"],
     className: "z-10 absolute top-20 -left-10 w-1/2 shadow-xl rounded-lg grayscale-[0.3] hover:grayscale-0 transition-all duration-500",
   },
   {
-    src: "https://images.unsplash.com/photo-1600891964092-4316c288032e?q=80&w=1974&auto=format&fit=crop",
+    src: "/images/localized/plating-detail.jpg",
     alt: "Plating Detail",
     yRange: ["10%", "30%"],
     className: "z-0 absolute -bottom-10 right-0 w-1/2 shadow-lg rounded-lg opacity-80",

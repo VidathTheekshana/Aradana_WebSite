@@ -9,7 +9,7 @@ export function CTA() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=2070&auto=format&fit=crop"
+          src="/images/localized/culinary-excellence.jpg"
           alt="Culinary Excellence"
           fill
           className="object-cover"

@@ -19,6 +19,7 @@ const navLinks = [
 export function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,21 +29,31 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMenuOpen]);
+
   return (
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+      className={`fixed top-0 left-0 right-0 transition-all duration-500 ease-in-out ${
         scrolled 
-          ? "h-[85px] shadow-[0_8px_32px_rgba(0,0,0,0.4)]" 
-          : "h-[110px] shadow-none"
+          ? "h-[70px] md:h-[85px] shadow-[0_8px_32px_rgba(0,0,0,0.4)]" 
+          : "h-[90px] md:h-[110px] shadow-none"
       }`}
       style={{
-        backgroundColor: scrolled ? "rgba(5, 5, 5, 0.9)" : "rgba(5, 5, 5, 0.6)",
-        backdropFilter: "blur(15px)",
-        WebkitBackdropFilter: "blur(15px)",
-        borderBottom: "1px solid rgba(255, 215, 0, 0.15)",
+        zIndex: isMenuOpen ? 100 : 50, // Stay on top but keep context clear
+        backgroundColor: scrolled ? "rgba(5, 5, 5, 0.98)" : "rgba(5, 5, 5, 0.8)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
+        borderBottom: "1px solid rgba(255, 215, 0, 0.2)",
       }}
     >
       <div className="container mx-auto px-6 h-full flex items-center justify-between relative">
@@ -55,7 +66,7 @@ export function Navbar() {
               className="relative flex items-center gap-1"
             >
             {/* Logo Image */}
-            <div className="relative w-24 h-24 md:w-32 md:h-32 flex-shrink-0 group-hover:scale-150 transition-transform duration-500">
+            <div className="relative w-16 h-16 md:w-32 md:h-32 flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
               <img
                 src="/logo.png"
                 alt="Aradana Caters logo"
@@ -120,7 +131,7 @@ export function Navbar() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative z-10"
+          className="relative z-10 hidden md:flex"
         >
           <Link href="/contact">
             <motion.button
@@ -145,13 +156,59 @@ export function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden relative z-10">
-          <button className="text-white">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <button 
+            className="text-white p-2"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {isMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
             </svg>
           </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <motion.div
+        initial={{ x: "100%" }}
+        animate={{ x: isMenuOpen ? 0 : "100%" }}
+        transition={{ type: "spring", damping: 30, stiffness: 200 }}
+        className="fixed inset-0 bg-[#050505] z-[95] md:hidden flex flex-col items-center justify-center gap-10"
+        style={{ height: '100vh', width: '100vw' }}
+      >
+        {navLinks.map((link, index) => (
+          <motion.div
+            key={link.href}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : 20 }}
+            transition={{ delay: index * 0.1 }}
+          >
+            <Link
+              href={link.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="text-4xl font-bold text-white hover:text-aradana-gold transition-colors font-[var(--font-playfair)] tracking-wide"
+            >
+              {link.name}
+            </Link>
+          </motion.div>
+        ))}
+        
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : 20 }}
+          transition={{ delay: navLinks.length * 0.1 }}
+          className="mt-4"
+        >
+          <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+            <button className="px-12 py-4 rounded-full font-bold text-xl text-aradana-dark bg-gradient-to-r from-aradana-gold to-aradana-amber shadow-[0_8px_30px_rgba(255,215,0,0.4)] hover:scale-105 transition-transform">
+              Book Your Experience
+            </button>
+          </Link>
+        </motion.div>
+      </motion.div>
     </motion.nav>
   );
 }
