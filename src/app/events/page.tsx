@@ -26,7 +26,7 @@ const eventTypes = [
 
 const galleryImages = [
     "/images/localized/IMG_7569.JPG",
-    "/images/localized/IMG_7575.jpg",
+    "/images/localized/MG_7575.JPG",
     "/images/localized/IMG_3018.jpeg",
     "/images/localized/IMG_3019.jpeg",
     "/images/localized/IMG_7578.jpg",
