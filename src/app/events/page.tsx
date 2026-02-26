@@ -247,14 +247,13 @@ function GalleryItem({ src, index }: { src: string, index: number }) {
             transition={{ duration: 0.8, delay: index * 0.1 }}
             className="relative aspect-[4/5] overflow-hidden rounded-sm group cursor-pointer bg-neutral-900"
         >
-             <Image 
+             <img 
                 src={src}
                 alt={`Gallery image ${index + 1}`}
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
         </motion.div>
     );
+
 }
