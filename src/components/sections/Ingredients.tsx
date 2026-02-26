@@ -32,20 +32,20 @@ export function Ingredients() {
             </h3>
           </div>
           <h2 className="text-4xl md:text-6xl font-bold text-white leading-tight">
-            From Farm to Table
+           Quality You Can Trust
           </h2>
           <p className="text-xl text-aradana-muted leading-relaxed max-w-lg">
-            Every ingredient is hand-selected for freshness and quality. We believe that true culinary excellence begins with the finest raw materials, sourced from local artisans and sustainable farms.
+            We focus on taste, hygiene, and presentation to deliver meals that are fresh, consistent, and made to high standards. Every dish is carefully prepared with quality ingredients, ensuring a delightful experience for every guest.
           </p>
           
           <div className="grid grid-cols-2 gap-6 pt-4">
             <div>
-               <h4 className="text-white font-semibold text-2xl">100+</h4>
-               <p className="text-aradana-muted text-sm">Local Farms</p>
+               <h4 className="text-white font-semibold text-2xl">500+</h4>
+               <p className="text-aradana-muted text-sm">Happy Clients</p>
             </div>
             <div>
-               <h4 className="text-white font-semibold text-2xl">Daily</h4>
-               <p className="text-aradana-muted text-sm">Fresh Harvests</p>
+               <h4 className="text-white font-semibold text-2xl">On-Time</h4>
+               <p className="text-aradana-muted text-sm">Delivery</p>
             </div>
           </div>
         </motion.div>

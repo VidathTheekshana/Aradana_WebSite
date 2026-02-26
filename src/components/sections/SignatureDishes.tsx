@@ -3,19 +3,20 @@
 import { motion, useScroll, useTransform, MotionValue } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const dishes = [
   {
     src: "/images/localized/signature-entree.jpg",
     alt: "Signature Entree",
     yRange: ["0%", "-20%"],
-    className: "z-20 w-3/4 md:w-2/3 shadow-2xl rounded-lg translate-x-10",
+    className: "z-20 w-3/4 md:w-2/3 shadow-2xl rounded-lg md:translate-x-10",
   },
   {
     src: "/images/localized/salad-detail.jpg",
     alt: "Fresh Salad Detail",
     yRange: ["20%", "-10%"],
-    className: "z-10 absolute top-20 -left-10 w-1/2 shadow-xl rounded-lg grayscale-[0.3] hover:grayscale-0 transition-all duration-500",
+    className: "z-10 absolute top-20 left-0 md:-left-10 w-1/2 shadow-xl rounded-lg grayscale-[0.3] hover:grayscale-0 transition-all duration-500",
   },
   {
     src: "/images/localized/plating-detail.jpg",
@@ -67,9 +68,11 @@ export function SignatureDishes() {
           </p>
           
            <div className="flex justify-end pt-8">
-            <button className="text-white border border-white/20 px-8 py-3 rounded-full hover:bg-white hover:text-aradana-dark transition-colors duration-300">
-                View Full Menu
-            </button>
+            <Link href="/menus">
+              <button className="text-white border border-white/20 px-8 py-3 rounded-full hover:bg-white hover:text-aradana-dark transition-colors duration-300">
+                  View Full Menu
+              </button>
+            </Link>
            </div>
         </motion.div>
 
