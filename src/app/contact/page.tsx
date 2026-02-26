@@ -1,12 +1,16 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { useState, useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { Mail, Phone, MapPin, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import Image from "next/image";
-import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactPage() {
+  const formRef = useRef<HTMLFormElement>(null);
   const heroRef = useRef(null);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"],
@@ -14,6 +18,31 @@ export default function ContactPage() {
 
   const yHero = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacityHero = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setStatus("sending");
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_id",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_id",
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "public_key"
+      );
+      setStatus("success");
+      formRef.current.reset();
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => setStatus("idle"), 5000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
 
   return (
     <main className="bg-aradana-dark min-h-screen">
@@ -95,29 +124,29 @@ export default function ContactPage() {
                    whileInView={{ opacity: 1, y: 0 }}
                    viewport={{ once: true }}
                    transition={{ duration: 0.8 }}
-                   className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/10"
+                   className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden"
                 >
                     <h2 className="text-3xl font-bold text-white mb-8">Send Us a Message</h2>
-                    <form className="space-y-6">
+                    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <label htmlFor="name" className="text-sm text-aradana-muted uppercase tracking-wider">Name</label>
-                                <input type="text" id="name" className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors" placeholder="Your Name" />
+                                <label htmlFor="user_name" className="text-sm text-aradana-muted uppercase tracking-wider">Name</label>
+                                <input required type="text" id="user_name" name="user_name" className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors" placeholder="Your Name" />
                             </div>
                             <div className="space-y-2">
-                                <label htmlFor="phone" className="text-sm text-aradana-muted uppercase tracking-wider">Phone</label>
-                                <input type="tel" id="phone" className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors" placeholder="+94 77..." />
+                                <label htmlFor="user_phone" className="text-sm text-aradana-muted uppercase tracking-wider">Phone</label>
+                                <input required type="tel" id="user_phone" name="user_phone" className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors" placeholder="+94 77..." />
                             </div>
                         </div>
 
                         <div className="space-y-2">
-                            <label htmlFor="email" className="text-sm text-aradana-muted uppercase tracking-wider">Email</label>
-                            <input type="email" id="email" className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors" placeholder="your@email.com" />
+                            <label htmlFor="user_email" className="text-sm text-aradana-muted uppercase tracking-wider">Email</label>
+                            <input required type="email" id="user_email" name="user_email" className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors" placeholder="your@email.com" />
                         </div>
 
                         <div className="space-y-2">
-                             <label htmlFor="type" className="text-sm text-aradana-muted uppercase tracking-wider">Event Type</label>
-                             <select id="type" className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors appearance-none" defaultValue="">
+                             <label htmlFor="event_type" className="text-sm text-aradana-muted uppercase tracking-wider">Event Type</label>
+                             <select required id="event_type" name="event_type" className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors appearance-none" defaultValue="">
                                  <option value="" disabled>Select Event Type</option>
                                  <option value="wedding">Wedding</option>
                                  <option value="corporate">Dana & Bana</option>
@@ -128,13 +157,62 @@ export default function ContactPage() {
 
                         <div className="space-y-2">
                             <label htmlFor="message" className="text-sm text-aradana-muted uppercase tracking-wider">Message</label>
-                            <textarea id="message" rows={5} className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors" placeholder="Tell us about your event..."></textarea>
+                            <textarea required id="message" name="message" rows={5} className="w-full bg-aradana-dark/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-aradana-gold transition-colors" placeholder="Tell us about your event..."></textarea>
                         </div>
 
-                        <button className="w-full bg-gradient-to-r from-aradana-gold to-aradana-amber text-aradana-dark font-bold py-4 rounded-lg hover:shadow-[0_0_20px_rgba(255,215,0,0.4)] transition-all duration-300 transform hover:scale-[1.02]">
-                            Send Message
+                        <button 
+                          disabled={status === "sending"}
+                          className="w-full bg-gradient-to-r from-aradana-gold to-aradana-amber text-aradana-dark font-bold py-4 rounded-lg hover:shadow-[0_0_20px_rgba(255,215,0,0.4)] transition-all duration-300 transform hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                        >
+                            {status === "sending" ? (
+                              <>
+                                <Loader2 className="w-5 h-5 animate-spin" />
+                                Sending...
+                              </>
+                            ) : "Send Message"}
                         </button>
                     </form>
+
+                    {/* Success/Error Overlays */}
+                    <AnimatePresence>
+                      {status === "success" && (
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className="absolute inset-0 bg-aradana-dark/95 backdrop-blur-sm flex flex-col items-center justify-center text-center p-8 z-30"
+                        >
+                          <motion.div
+                            initial={{ scale: 0.5, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            transition={{ type: "spring", damping: 12 }}
+                          >
+                            <CheckCircle2 className="w-20 h-20 text-aradana-gold mb-6" />
+                          </motion.div>
+                          <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+                          <p className="text-aradana-muted">Thank you for reaching out. We will get back to you shortly.</p>
+                        </motion.div>
+                      )}
+
+                      {status === "error" && (
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className="absolute inset-0 bg-aradana-dark/95 backdrop-blur-sm flex flex-col items-center justify-center text-center p-8 z-30"
+                        >
+                          <AlertCircle className="w-20 h-20 text-red-500 mb-6" />
+                          <h3 className="text-2xl font-bold text-white mb-2">Submission Failed</h3>
+                          <p className="text-aradana-muted">Something went wrong. Please try again or call us directly.</p>
+                          <button 
+                            onClick={() => setStatus("idle")}
+                            className="mt-6 text-aradana-gold underline underline-offset-4"
+                          >
+                            Try again
+                          </button>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                 </motion.div>
 
                 {/* Contact Info & Map */}

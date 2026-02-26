@@ -20,10 +20,10 @@ SUPERB.`,
     link: "https://share.google/rO7CRrgwlxhNkQAD9"
   },
 {
-  quote: "The food is great.",
-  author: "udara weerakoon",
+  quote: `Great experience with Aradana Caters. The food was delicious, well-prepared, and everyone enjoyed it. The service was friendly and organized, making our event run smoothly. Highly recommended.`,
+  author: "Kaveen Sathurusinghe",
   role: "Private Dinner Host",
-  link: "https://share.google/ubxDBjr7oxW7g9bFT"
+  link: "https://share.google/yADsDheSE0JQF9ujM"
 },
 ];
 
@@ -91,7 +91,7 @@ export function Testimonials() {
           className="text-center"
         >
           <Link 
-            href="https://www.google.com/maps/place/Aradana+Caters"
+            href="https://share.google/RWW1KhSCzItSxsUvX"
             target="_blank"
             className="inline-flex items-center gap-2 px-8 py-3 bg-white/5 hover:bg-white/10 text-white rounded-full border border-white/10 transition-all duration-300 group"
           >

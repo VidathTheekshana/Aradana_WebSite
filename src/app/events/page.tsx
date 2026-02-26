@@ -25,12 +25,12 @@ const eventTypes = [
 ];
 
 const galleryImages = [
-    "/images/localized/hoppers-kottu-category.jpg",
-    "/images/localized/menu-hero-bg.jpg",
-    "/images/localized/hero-spread.jpg",
-    "/images/localized/salad-detail.jpg",
-    "/images/localized/gallery-5.jpg",
-    "/images/localized/gallery-6.jpg",
+    "/images/localized/IMG_7569.JPG",
+    "/images/localized/IMG_7575.jpg",
+    "/images/localized/IMG_3018.jpeg",
+    "/images/localized/IMG_3019.jpeg",
+    "/images/localized/IMG_7578.jpg",
+    "/images/localized/IMG_7571.JPG",
 ];
 
 export default function EventsPage() {

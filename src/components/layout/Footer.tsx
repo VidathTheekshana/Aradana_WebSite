@@ -15,12 +15,6 @@ export function Footer() {
           </p>
         </div>
 
-        {/* Links */}
-        <div className="flex gap-8 text-sm">
-           <Link href="#" className="text-white/60 hover:text-aradana-gold transition-colors">Privacy Policy</Link>
-           <Link href="#" className="text-white/60 hover:text-aradana-gold transition-colors">Terms of Service</Link>
-           <Link href="#" className="text-white/60 hover:text-aradana-gold transition-colors">Contact</Link>
-        </div>
 
         {/* Socials */}
        <div className="flex gap-6">
