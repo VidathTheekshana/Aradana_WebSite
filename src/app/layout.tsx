@@ -21,6 +21,30 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Aradana Catering | Culinary Excellence",
   description: "Bespoke culinary experiences crafted for unforgettable events. A luxury catering service.",
+  metadataBase: new URL('https://aradanacaterers.com'),
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'android-chrome-192',
+        url: '/android-chrome-192.png',
+      },
+      {
+        rel: 'android-chrome-512',
+        url: '/android-chrome-512.png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -31,11 +55,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicons and social preview using the existing project logo (copied to common filenames) */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
         <meta property="og:title" content="Aradana Catering" />
