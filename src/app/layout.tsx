@@ -27,10 +27,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/aradana-logo-icon.png', sizes: 'any' },
+      { url: '/icon1.png', sizes: 'any' },
     ],
     apple: [
-      { url: '/aradana-logo-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/icon1.png', sizes: '180x180', type: 'image/png' },
     ],
   },
 };
