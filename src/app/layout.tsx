@@ -31,14 +31,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Favicon and social preview using the existing project logo */}
-        <link rel="icon" href="/logo.png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
+        {/* Favicons and social preview using the existing project logo (copied to common filenames) */}
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
         <meta property="og:title" content="Aradana Catering" />
         <meta property="og:description" content="Bespoke culinary experiences crafted for unforgettable events." />
-        <meta property="og:image" content="/logo.png" />
+        <meta property="og:image" content="/android-chrome-512.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </head>
       <body
