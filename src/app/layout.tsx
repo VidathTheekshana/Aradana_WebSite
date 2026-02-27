@@ -27,10 +27,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/icon1.png', sizes: 'any' },
+      { url: '/favicon-v2.png', sizes: '32x32' },
     ],
     apple: [
-      { url: '/icon1.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon-v2.png', sizes: '180x180', type: 'image/png' },
     ],
   },
 };
@@ -43,8 +43,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Cache-busted favicon to force browsers/CDNs to fetch the new logo */}
-        <link rel="icon" href="/favicon-v2.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
         <meta property="og:title" content="Aradana Catering" />
