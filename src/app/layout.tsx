@@ -43,6 +43,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Cache-busted favicon to force browsers/CDNs to fetch the new logo */}
+        <link rel="icon" href="/favicon-v2.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
         <meta property="og:title" content="Aradana Catering" />
