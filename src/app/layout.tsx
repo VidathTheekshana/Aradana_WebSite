@@ -30,6 +30,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Favicon and social preview using the existing project logo */}
+        <link rel="icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#000000" />
+        <meta property="og:title" content="Aradana Catering" />
+        <meta property="og:description" content="Bespoke culinary experiences crafted for unforgettable events." />
+        <meta property="og:image" content="/logo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </head>
       <body
         className={`${inter.variable} ${playfair.variable} bg-aradana-dark text-white antialiased`}
       >
