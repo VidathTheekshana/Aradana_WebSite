@@ -6,13 +6,13 @@ import Image from "next/image";
 
 export function CTA() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/localized/culinary-excellence.png"
+          src="/images/localized/celebration-toast.jpg"
           alt="Culinary Excellence"
           fill
-          className="object-cover"
+          className="object-cover brightness-[0.4]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-aradana-dark via-aradana-dark/50 to-transparent" />
       </div>
@@ -24,21 +24,26 @@ export function CTA() {
            viewport={{ once: true }}
            transition={{ duration: 0.8 }}
         >
-          <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight">
-            Experience Culinary Excellence
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Seeing is believing.
           </h2>
-          <p className="text-xl md:text-2xl text-aradana-muted mb-8 max-w-2xl mx-auto">
-            Let&apos;s create something unforgettable together.
+          <p className="text-xl text-aradana-muted mb-10 max-w-2xl mx-auto">
+            Experience the artistry and detail that define Aradana events.
           </p>
           
-          <div className="flex flex-col md:flex-row gap-6 justify-center">
-                <Link href="/contact" className="bg-aradana-gold text-aradana-dark font-bold px-8 py-4 rounded-full text-lg hover:bg-white transition-colors transform hover:-translate-y-1">
-                    Book Your Event
-                </Link>
-                <Link href="/menus" className="border border-white text-white font-bold px-8 py-4 rounded-full text-lg hover:text-aradana-gold hover:border-aradana-gold transition-colors transform hover:-translate-y-1">
-                    Explore Menus
-                </Link>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Link 
+              href="/events#visual-diary" 
+              className="inline-block bg-aradana-gold text-aradana-dark font-bold px-12 py-5 rounded-full text-lg hover:bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-[0_10px_40px_rgba(255,215,0,0.3)] hover:scale-105"
+            >
+              View Our Event Gallery
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
     </section>

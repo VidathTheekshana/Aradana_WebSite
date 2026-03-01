@@ -85,15 +85,17 @@ export function Testimonials() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="text-center"
         >
+
           <Link 
             href="https://share.google/RWW1KhSCzItSxsUvX"
             target="_blank"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-white/5 hover:bg-white/10 text-white rounded-full border border-white/10 transition-all duration-300 group"
+            className="inline-flex items-center gap-2 text-white/60 hover:text-white transition-colors group text-sm"
           >
             See all reviews on Google
             <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

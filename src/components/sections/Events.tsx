@@ -15,7 +15,7 @@ export function Events() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
   return (
-    <section ref={containerRef} className="relative flex items-center overflow-hidden py-20 mt-24">
+    <section ref={containerRef} className="relative flex items-center overflow-hidden py-16 md:py-20 mt-12 md:mt-24">
       {/* Parallax Background */}
       <motion.div style={{ y }} className="absolute inset-0 z-0 h-[120%] -top-[10%]">
         <Image

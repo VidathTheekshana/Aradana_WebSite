@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   const ref = useRef(null);
@@ -58,7 +59,25 @@ export function Hero() {
          - Flavor at its finest -
         </motion.p>
         
-{/* Buttons removed as per user request */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+          className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center"
+        >
+          <Link
+            href="/contact"
+            className="bg-aradana-gold text-aradana-dark font-bold px-10 py-4 rounded-full text-lg hover:bg-white transition-all duration-300 transform hover:-translate-y-1 shadow-[0_8px_30px_rgba(255,215,0,0.3)] min-w-[200px]"
+          >
+            Book Your Event
+          </Link>
+          <Link
+            href="/menus"
+            className="border-2 border-white text-white font-bold px-10 py-4 rounded-full text-lg hover:text-aradana-gold hover:border-aradana-gold transition-all duration-300 transform hover:-translate-y-1 min-w-[200px]"
+          >
+            Explore Menus
+          </Link>
+        </motion.div>
       </motion.div>
       
       {/* Scroll Indicator */}
@@ -69,40 +88,12 @@ export function Hero() {
         transition={{ delay: 1.5, duration: 1 }}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-0"
       >
-        {[0, 1, 2].map((i) => {
-          // Define sizes for each arrow: Small -> Medium -> Large
-          const sizes = ["w-4 h-4", "w-6 h-6", "w-8 h-8"];
-          
-          return (
-            <motion.div
-              key={i}
-              animate={{ opacity: [0.2, 1, 0.2] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: i * 0.4,
-                ease: "easeInOut",
-              }}
-            >
-               <svg 
-                 width="24" 
-                 height="24" 
-                 viewBox="0 0 24 24" 
-                 fill="none" 
-                 xmlns="http://www.w3.org/2000/svg"
-                 className={`${sizes[i]} text-aradana-gold`}
-               >
-                  <path 
-                    d="M6 9L12 15L18 9" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round"
-                  />
-               </svg>
-            </motion.div>
-          );
-        })}
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: 80 }}
+          transition={{ delay: 1.5, duration: 1.5, ease: "easeInOut" }}
+          className="w-[1px] bg-gradient-to-b from-aradana-gold/0 via-aradana-gold/50 to-aradana-gold/0"
+        />
       </motion.div>
     </section>
   );

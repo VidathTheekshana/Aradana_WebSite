@@ -14,7 +14,7 @@ export function Ingredients() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section ref={containerRef} className="relative flex items-center justify-center py-24 overflow-hidden">
+    <section ref={containerRef} className="relative flex items-center justify-center py-16 md:py-24 overflow-hidden">
       <div className="absolute inset-0 bg-aradana-dark z-0" />
       
       <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -51,7 +51,7 @@ export function Ingredients() {
         </motion.div>
 
         {/* Visual Content */}
-        <div className="relative h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
+        <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
            <motion.div style={{ y }} className="absolute inset-0 h-[120%] -top-[10%]">
              <Image
                src="/images/localized/chef-ingredients.jpg"

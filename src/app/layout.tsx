@@ -51,6 +51,7 @@ export default function RootLayout({
         <meta name="twitter:card" content="summary_large_image" />
       </head>
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${playfair.variable} bg-aradana-dark text-white antialiased`}
       >
         <Navbar />

@@ -128,8 +128,8 @@ export default function MenusPage() {
                   </h2>
                   <p className="text-aradana-muted max-w-2xl mx-auto">
                     {activeCategory === "Dana & Bana" && "Choose from our 12 sample traditional packages. Prepared with reverence and the highest standards."}
-                    {activeCategory === "Weddings & Parties" && "Choose from our 12 carefully curated packages. Minimum 100 guests. Contact us to customise."}
-                    {activeCategory === "Funerals" && "Choose from our carefully curated packages. Prepared with the highest standards of quality and care. Minimum 100 guests."}
+                    {activeCategory === "Weddings & Parties" && "Choose from our 12 carefully curated packages. Minimum 50 guests. Contact us to customise."}
+                    {activeCategory === "Funerals" && "Choose from our carefully curated packages. Prepared with the highest standards of quality and care. Minimum 50 guests."}
                     {activeCategory === "BBQ & Grilled" && "Choose from our two signature Western BBQ packages. Perfect for outdoor events and private gatherings."}
                     {activeCategory === "Hoppers & Kottu" && "Choose from our two Hoppers & Kottu packages. Perfect for any occasion."}
                     {activeCategory === "Bites & Appetizers" && "All bites are ordered per 1kg. Mix and match to create the perfect spread for your event."}

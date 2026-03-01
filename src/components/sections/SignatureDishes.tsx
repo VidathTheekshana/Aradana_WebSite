@@ -10,19 +10,19 @@ const dishes = [
     src: "/images/localized/signature-entree.jpg",
     alt: "Signature Entree",
     yRange: ["0%", "-20%"],
-    className: "z-20 w-3/4 md:w-2/3 shadow-2xl rounded-lg md:translate-x-10",
+    className: "z-20 w-[85%] md:w-2/3 shadow-2xl rounded-lg md:translate-x-10",
   },
   {
     src: "/images/localized/salad-detail.jpg",
     alt: "Fresh Salad Detail",
     yRange: ["20%", "-10%"],
-    className: "z-10 absolute top-20 left-0 md:-left-10 w-1/2 shadow-xl rounded-lg grayscale-[0.3] hover:grayscale-0 transition-all duration-500",
+    className: "z-10 absolute top-10 md:top-20 left-0 md:-left-10 w-2/5 md:w-1/2 shadow-xl rounded-lg grayscale-[0.3] hover:grayscale-0 transition-all duration-500",
   },
   {
     src: "/images/localized/plating-detail.jpg",
     alt: "Plating Detail",
     yRange: ["10%", "30%"],
-    className: "z-0 absolute -bottom-10 right-0 w-1/2 shadow-lg rounded-lg opacity-80",
+    className: "z-0 absolute -bottom-5 md:-bottom-10 right-0 w-2/5 md:w-1/2 shadow-lg rounded-lg opacity-80",
   },
 ];
 
@@ -33,18 +33,18 @@ export function SignatureDishes() {
     offset: ["start end", "end start"],
   });
 
-  const textY = useTransform(scrollYProgress, [0, 1], ["50%", "-50%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["20%", "-20%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.3, 0.8, 1], [0, 1, 1, 0]);
 
   return (
-    <section ref={containerRef} className="flex items-center justify-center py-20 relative overflow-hidden bg-aradana-dark">
+    <section ref={containerRef} className="flex items-center justify-center py-12 md:py-20 relative overflow-hidden bg-aradana-dark">
         {/* Ambient Glow */}
         <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-aradana-gold/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         
         {/* Visual Content - Parallax Layering */}
-        <div className="relative h-[600px] w-full flex items-center justify-center">
+        <div className="relative h-[450px] md:h-[600px] w-full flex items-center justify-center">
              <DishImage src={dishes[2].src} alt={dishes[2].alt} className={dishes[2].className} yRange={dishes[2].yRange} progress={scrollYProgress} />
              <DishImage src={dishes[1].src} alt={dishes[1].alt} className={dishes[1].className} yRange={dishes[1].yRange} progress={scrollYProgress} />
              <DishImage src={dishes[0].src} alt={dishes[0].alt} className={dishes[0].className} yRange={dishes[0].yRange} progress={scrollYProgress} />

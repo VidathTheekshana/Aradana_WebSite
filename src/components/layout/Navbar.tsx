@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
+import { usePathname, useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+
+import { ChevronLeft, Menu, X } from "lucide-react";
 
 // Logo is rendered inline below. No LogoImage wrapper to keep behaviour simple and reliable.
 
@@ -18,6 +20,7 @@ const navLinks = [
 
 export function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -38,6 +41,14 @@ export function Navbar() {
     }
   }, [isMenuOpen]);
 
+  const isHome = pathname === "/";
+
+  const handleBack = () => {
+    if (!isHome) {
+      router.back();
+    }
+  };
+
   return (
     <motion.nav
       initial={{ y: -20, opacity: 0 }}
@@ -49,50 +60,54 @@ export function Navbar() {
           : "h-[90px] md:h-[110px] shadow-none"
       }`}
       style={{
-        zIndex: isMenuOpen ? 100 : 50, // Stay on top but keep context clear
-        backgroundColor: scrolled ? "rgba(5, 5, 5, 0.98)" : "rgba(5, 5, 5, 0.8)",
+        zIndex: 100,
+        backgroundColor: scrolled || isMenuOpen ? "rgba(5, 5, 5, 0.98)" : "rgba(5, 5, 5, 0.8)",
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(255, 215, 0, 0.2)",
+        borderBottom: scrolled || isMenuOpen ? "1px solid rgba(255, 215, 0, 0.2)" : "1px solid transparent",
       }}
     >
       <div className="container mx-auto px-6 h-full flex items-center justify-between relative">
-        {/* Logo - Left */}
-  <Link href="/" className="group relative z-10" aria-label="Aradana Caters home">
+        <div className="flex items-center gap-3">
+          {/* Back Button - Mobile Only, Not on Home */}
+          {!isHome && (
+            <button 
+              onClick={handleBack}
+              className="md:hidden text-white flex items-center justify-center w-12 h-12 rounded-full hover:bg-white/10 active:scale-95 transition-all group"
+              aria-label="Go back"
+            >
+              <ChevronLeft className="w-8 h-8 group-hover:text-aradana-gold transition-colors" />
+            </button>
+          )}
+
+          {/* Logo - Left */}
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className="group relative z-10" aria-label="Aradana Caters home">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               className="relative flex items-center gap-1"
             >
-            {/* Logo Image */}
-            <div className="relative w-16 h-16 md:w-32 md:h-32 flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
-              <img
-                src="/logo.png"
-                alt="Aradana Caters logo"
-                className="w-full h-full object-contain select-none pointer-events-none"
-              />
-            </div>
-            
-            {/* Logo Text */}
-            <h1 className="text-xl md:text-2xl font-bold tracking-tight font-[var(--font-playfair)]">
-              <span className="text-white group-hover:text-aradana-gold transition-colors duration-300">
-                Aradana
-              </span>
-            </h1>
-            {/* Subtle radial glow behind logo */}
-            <div className="absolute -inset-4 bg-gradient-radial from-aradana-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
-          </motion.div>
-        </Link>
+              <div className="relative w-12 h-12 md:w-32 md:h-32 flex-shrink-0 group-hover:scale-110 transition-transform duration-500">
+                <img
+                  src="/logo.png"
+                  alt="Aradana Caters logo"
+                  className="w-full h-full object-contain select-none pointer-events-none"
+                />
+              </div>
+              
+              <h1 className="text-xl md:text-2xl font-bold tracking-tight font-[var(--font-playfair)]">
+                <span className="text-white group-hover:text-aradana-gold transition-colors duration-300">
+                  Aradana
+                </span>
+              </h1>
+            </motion.div>
+          </Link>
+        </div>
 
-        {/* Navigation Links - Center (Absolutely positioned) */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden md:flex items-center gap-10 lg:gap-12 absolute left-1/2 -translate-x-1/2"
-        >
-          {navLinks.map((link, index) => {
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-10 lg:gap-12 absolute left-1/2 -translate-x-1/2">
+          {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
@@ -100,115 +115,102 @@ export function Navbar() {
                 href={link.href}
                 className="relative group py-2"
               >
-                <motion.span
-                  initial={{ opacity: 0, y: -5 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: 0.1 * index }}
-                  className={`text-sm md:text-base lg:text-lg font-medium tracking-[0.02em] transition-all duration-300 group-hover:-translate-y-0.5 inline-block font-[var(--font-playfair)] ${
-                    isActive
-                      ? "text-transparent bg-clip-text bg-gradient-to-r from-aradana-gold to-aradana-amber"
-                      : "text-[#d1d1d1] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-aradana-gold group-hover:to-aradana-amber"
-                  }`}
-                >
+                <span className={`text-sm md:text-base lg:text-lg font-medium tracking-[0.02em] transition-all duration-300 group-hover:-translate-y-0.5 inline-block font-[var(--font-playfair)] ${
+                  isActive
+                    ? "text-transparent bg-clip-text bg-gradient-to-r from-aradana-gold to-aradana-amber"
+                    : "text-[#d1d1d1] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-aradana-gold group-hover:to-aradana-amber"
+                }`}>
                   {link.name}
-                </motion.span>
-
-                {/* Animated underline - expands from center */}
-                <span
-                  className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-aradana-gold to-aradana-amber transition-all duration-300 ease-in-out ${
-                    isActive
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
-                  }`}
-                />
+                </span>
+                <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-gradient-to-r from-aradana-gold to-aradana-amber transition-all duration-300 ease-in-out ${
+                  isActive ? "w-full" : "w-0 group-hover:w-full"
+                }`} />
               </Link>
             );
           })}
-        </motion.div>
+        </div>
 
-        {/* CTA Button - Right */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="relative z-10 hidden md:flex"
-        >
+        {/* Desktop CTA */}
+        <div className="hidden md:flex">
           <Link href="/contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.98 }}
               className="relative px-8 py-3 rounded-full font-semibold text-sm tracking-wider overflow-hidden group transition-all duration-300 text-aradana-dark font-[var(--font-inter)]"
-              style={{
-                background: "linear-gradient(90deg, #FFD700, #FFC870)",
-              }}
+              style={{ background: "linear-gradient(90deg, #FFD700, #FFC870)" }}
             >
-              {/* Glow effect on hover */}
-              <span className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-300"
-                style={{
-                  background: "linear-gradient(90deg, #FFD700, #FFC870)",
-                }}
-              />
-              
               <span className="relative z-10">Book Your Experience</span>
             </motion.button>
           </Link>
-        </motion.div>
+        </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden relative z-10">
+        <div className="md:hidden flex items-center">
           <button 
-            className="text-white p-2"
+            className="text-white p-2 flex items-center justify-center active:scale-95 transition-transform"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            {isMenuOpen ? <X className="w-10 h-10 text-aradana-gold" /> : <Menu className="w-10 h-10" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <motion.div
-        initial={{ x: "100%" }}
-        animate={{ x: isMenuOpen ? 0 : "100%" }}
-        transition={{ type: "spring", damping: 30, stiffness: 200 }}
-        className="fixed inset-0 bg-[#050505] z-[95] md:hidden flex flex-col items-center justify-center gap-10"
-        style={{ height: '100vh', width: '100vw' }}
-      >
-        {navLinks.map((link, index) => (
+      <AnimatePresence>
+        {isMenuOpen && (
           <motion.div
-            key={link.href}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : 20 }}
-            transition={{ delay: index * 0.1 }}
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "100%", opacity: 0 }}
+            transition={{ type: "spring", damping: 30, stiffness: 200 }}
+            className="fixed inset-0 bg-aradana-dark z-[90] md:hidden flex flex-col"
+            style={{ height: '100vh', width: '100vw' }}
           >
-            <Link
-              href={link.href}
-              onClick={() => setIsMenuOpen(false)}
-              className="text-4xl font-bold text-white hover:text-aradana-gold transition-colors font-[var(--font-playfair)] tracking-wide"
-            >
-              {link.name}
-            </Link>
+            {/* Overlay Header Spacer */}
+            <div className={`transition-all duration-500 ${scrolled ? 'h-[70px]' : 'h-[90px]'}`} />
+            
+            <div className="flex flex-col items-center justify-center flex-grow py-10 gap-8">
+              {navLinks.map((link, index) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 + 0.2 }}
+                >
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`text-4xl font-bold transition-all font-[var(--font-playfair)] tracking-wide py-2 inline-block active:scale-95 ${
+                      pathname === link.href ? "text-aradana-gold" : "text-white hover:text-aradana-gold"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: navLinks.length * 0.1 + 0.3 }}
+                className="mt-10"
+              >
+                <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
+                  <button className="px-12 py-4 rounded-full font-bold text-xl text-aradana-dark bg-gradient-to-r from-aradana-gold to-aradana-amber shadow-[0_10px_40px_rgba(255,215,0,0.3)] active:scale-95 transition-all">
+                    Book Your Experience
+                  </button>
+                </Link>
+              </motion.div>
+            </div>
+            
+            <div className="pb-10 flex flex-col items-center opacity-30 text-[10px] tracking-[0.2em] uppercase">
+              <span className="mb-2 text-white">Aradana Caters</span>
+              <div className="w-12 h-px bg-aradana-gold/50" />
+            </div>
           </motion.div>
-        ))}
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: isMenuOpen ? 1 : 0, y: isMenuOpen ? 0 : 20 }}
-          transition={{ delay: navLinks.length * 0.1 }}
-          className="mt-4"
-        >
-          <Link href="/contact" onClick={() => setIsMenuOpen(false)}>
-            <button className="px-12 py-4 rounded-full font-bold text-xl text-aradana-dark bg-gradient-to-r from-aradana-gold to-aradana-amber shadow-[0_8px_30px_rgba(255,215,0,0.4)] hover:scale-105 transition-transform">
-              Book Your Experience
-            </button>
-          </Link>
-        </motion.div>
-      </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }

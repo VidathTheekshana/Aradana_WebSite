@@ -1,56 +1,102 @@
-import Link from "next/link";
-
 export function Footer() {
   return (
     <footer className="bg-black py-12 border-t border-white/5">
-      <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-        
-        {/* Logo & Copyright */}
-        <div className="text-center md:text-left">
-          <Link href="/" className="text-2xl font-bold tracking-tighter text-white block mb-2">
-            Aradana
-          </Link>
-          <p className="text-white/40 text-sm">
-            © {new Date().getFullYear()} Aradana Catering. All rights reserved.
-          </p>
-        </div>
+      <div className="container mx-auto px-6 md:px-12">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20 items-start md:items-center">
 
 
-        {/* Socials */}
-       <div className="flex gap-6">
-  {/* Facebook */}
-  <a 
-    href="https://www.facebook.com/share/16zZbFdPgR/?mibextid=wwXIfr"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-aradana-muted hover:text-aradana-gold transition-colors"
-  >
-    <span className="sr-only">Facebook</span>
-    <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-    </svg>
-  </a>
+          {/* Contact */}
+          <div className="text-center md:text-left md:justify-self-start">
+            <h4 className="text-white text-lg font-semibold mb-3">Contact</h4>
 
-           {/* Google */}
-           <a href="#" className="text-aradana-muted hover:text-aradana-gold transition-colors">
-               <span className="sr-only">Google</span>
-               <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                   <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .533 5.333.533 12S5.867 24 12.48 24c3.44 0 6.013-1.133 8.053-3.24 2.08-2.08 2.72-4.987 2.72-7.387 0-.733-.093-1.413-.213-2.067h-10.56z" />
-               </svg>
-            </a>
+            <address className="not-italic text-white/60 text-sm space-y-1">
+              <div>49/C, Maharagama Road</div>
+              <div>Mampe, Piliyandala</div>
+            </address>
 
-            {/* Gmail */}
-<a 
-  href="mailto:wasanthakota@gmail.com?subject=Aradana%20Catering%20Inquiry&body=Hello%20Aradana%20Team,%20I%20would%20like%20to%20inquire%20about%20your%20catering%20services."
+            <div className="mt-4 text-white/60 text-sm">
+              <div className="font-medium text-white/80 mb-2">Phone</div>
+              <div className="flex flex-col gap-1">
+                <a href="tel:+94779321079" className="hover:text-aradana-gold transition">
+                  +94 77 932 1079
+                </a>
+                <a href="tel:+94775347164" className="hover:text-aradana-gold transition">
+                  +94 77 534 7164
+                </a>
+              </div>
 
-  className="text-aradana-muted hover:text-aradana-gold transition-colors"
->
-  <span className="sr-only">Gmail</span>
-  <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
-  </svg>
-</a>
+              <div className="font-medium text-white/80 mt-4 mb-1">Email</div>
+              <a
+                href="mailto:wasanthakota@gmail.com"
+                className="hover:text-aradana-gold transition"
+              >
+                wasanthakota@gmail.com
+              </a>
 
+              <div className="mt-4">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=6.8073953,79.9276547"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-aradana-gold font-semibold hover:underline"
+                >
+                  View on map
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Social + CTA */}
+          <div className="text-center md:text-right md:justify-self-center">
+            <h4 className="text-white text-lg font-semibold mb-3">Connect</h4>
+
+            <div className="flex justify-center md:justify-end gap-4 mb-4 items-center">
+              {/* Facebook */}
+              <a
+                href="https://www.facebook.com/share/16zZbFdPgR/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-aradana-gold transition"
+                aria-label="Facebook"
+              >
+                <svg className="h-7 w-7" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+              </a>
+
+              {/* Google (site) - monochrome G to match theme */}
+              <a
+                href="https://aradanacaterers.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 hover:text-aradana-gold transition"
+                aria-label="Google"
+              >
+                <svg className="h-12 w-12" viewBox="0 0 24 24" aria-hidden="true">
+                  <text x="12" y="16" textAnchor="middle" fontSize="14" fontWeight="700" fill="currentColor" style={{ fontFamily: 'Arial, sans-serif' }}>G</text>
+                </svg>
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:wasanthakota@gmail.com"
+                className="text-white/60 hover:text-aradana-gold transition"
+                aria-label="Email"
+              >
+                <svg className="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/>
+                </svg>
+              </a>
+            </div>
+
+            {/* CTA removed per request */}
+            </div>
+
+            {/* Copyright / bottom text */}
+            <div className="mt-8 text-center md:text-right md:justify-self-end text-white/60 text-sm">
+              <div className="font-semibold text-white">Aradana</div>
+              <div className="mt-1">© 2026 Aradana Catering. All rights reserved.</div>
+            </div>
         </div>
       </div>
     </footer>
