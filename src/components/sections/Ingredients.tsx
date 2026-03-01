@@ -51,8 +51,8 @@ export function Ingredients() {
         </motion.div>
 
         {/* Visual Content */}
-        <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-xl">
-           <motion.div style={{ y }} className="absolute inset-0 h-[120%] -top-[10%]">
+        <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-md md:shadow-xl">
+           <motion.div style={{ y, willChange: "transform" }} className="absolute inset-0 h-[120%] -top-[10%]">
              <Image
                src="/images/localized/chef-ingredients.jpg"
                alt="Chef preparing fresh ingredients"

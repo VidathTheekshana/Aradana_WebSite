@@ -10,19 +10,19 @@ const dishes = [
     src: "/images/localized/signature-entree.jpg",
     alt: "Signature Entree",
     yRange: ["0%", "-20%"],
-    className: "z-20 w-[85%] md:w-2/3 shadow-2xl rounded-lg md:translate-x-10",
+    className: "z-20 w-[85%] md:w-2/3 shadow-lg md:shadow-2xl rounded-lg md:translate-x-10",
   },
   {
     src: "/images/localized/salad-detail.jpg",
     alt: "Fresh Salad Detail",
     yRange: ["20%", "-10%"],
-    className: "z-10 absolute top-10 md:top-20 left-0 md:-left-10 w-2/5 md:w-1/2 shadow-xl rounded-lg grayscale-[0.3] hover:grayscale-0 transition-all duration-500",
+    className: "z-10 absolute top-10 md:top-20 left-0 md:-left-10 w-2/5 md:w-1/2 shadow-md md:shadow-xl rounded-lg grayscale-[0.3] hover:grayscale-0 transition-all duration-500",
   },
   {
     src: "/images/localized/plating-detail.jpg",
     alt: "Plating Detail",
     yRange: ["10%", "30%"],
-    className: "z-0 absolute -bottom-5 md:-bottom-10 right-0 w-2/5 md:w-1/2 shadow-lg rounded-lg opacity-80",
+    className: "z-0 absolute -bottom-5 md:-bottom-10 right-0 w-2/5 md:w-1/2 shadow-sm md:shadow-lg rounded-lg opacity-80",
   },
 ];
 
@@ -84,7 +84,7 @@ export function SignatureDishes() {
 function DishImage({ src, alt, className, yRange, progress }: { src: string, alt: string, className: string, yRange: string[], progress: MotionValue<number> }) {
     const y = useTransform(progress, [0, 1], yRange);
     return (
-        <motion.div style={{ y }} className={className}>
+        <motion.div style={{ y, willChange: "transform" }} className={className}>
              <div className="relative aspect-[4/3] w-full h-full overflow-hidden rounded-lg">
                 <Image src={src} alt={alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
              </div>
