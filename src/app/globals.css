@@ -51,3 +51,34 @@ body {
   animation: gradientShift 6s ease infinite;
   background-size: 200% auto;
 }
+
+/* Responsive animation utility: .anim
+   - Mobile (max-width: 767px): use transform+opacity transitions only (GPU-friendly)
+   - Desktop (min-width: 768px): allow richer transitions
+   - Respect prefers-reduced-motion
+*/
+.anim {
+  will-change: transform, opacity;
+}
+
+@media (max-width: 767px) {
+  .anim {
+    transition: transform 180ms cubic-bezier(.22,.9,.35,1), opacity 160ms ease-out;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .anim {
+    transition: all 560ms cubic-bezier(.2,.8,.2,1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim {
+    transition: none !important;
+    animation: none !important;
+  }
+}
