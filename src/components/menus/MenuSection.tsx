@@ -18,8 +18,9 @@ export function MenuSection({ category, index, onViewAll }: MenuSectionProps) {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-10px", amount: 0.1 }}
       transition={{ duration: 0.8 }}
+      style={{ willChange: "transform, opacity" }}
       className={cn("flex flex-col md:flex-row gap-12 items-center", isEven ? "" : "md:flex-row-reverse")}
     >
       {/* Image */}

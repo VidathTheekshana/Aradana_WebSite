@@ -416,7 +416,7 @@ export const bbqMenuPackages: HoppersBBQPackage[] = [
 
 export const menuCategories: MenuCategory[] = [
   {
-    title: "Weddings & Parties",
+    title: "Celebrations & Parties",
     description: "Elegant courses designed for grand celebrations. Choose from our curated packages.",
     image: "/images/localized/wedding-party-category.jpg",
     items: []

@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 const eventTypes = [
   {
-    title: "Weddings & Parties",
+    title: "Celebrations & Parties",
     description: "From intimate garden ceremonies to grand ballroom receptions, we craft wedding experiences that are as unique as your love story. Our team handles every detail, ensuring you can savor every moment of your special day.",
     image: "/images/localized/wedding.jpg", 
   },

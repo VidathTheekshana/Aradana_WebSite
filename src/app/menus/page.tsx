@@ -81,10 +81,10 @@ export default function MenusPage() {
             
           {/* Scroll Indicator */}
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 80 }}
+            initial={{ opacity: 0, scaleY: 0 }}
+            animate={{ opacity: 1, scaleY: 1 }}
             transition={{ delay: 0.5, duration: 1.5, ease: "easeInOut" }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 w-[1px] bg-gradient-to-b from-aradana-gold/0 via-aradana-gold/50 to-aradana-gold/0"
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 w-[1px] h-20 origin-top bg-gradient-to-b from-aradana-gold/0 via-aradana-gold/50 to-aradana-gold/0"
           />
         </section>
 
@@ -128,7 +128,7 @@ export default function MenusPage() {
                   </h2>
                   <p className="text-aradana-muted max-w-2xl mx-auto">
                     {activeCategory === "Dana & Bana" && "Choose from our 12 sample traditional packages. Prepared with reverence and the highest standards."}
-                    {activeCategory === "Weddings & Parties" && "Choose from our 12 carefully curated packages. Minimum 50 guests. Contact us to customise."}
+                    {activeCategory === "Celebrations & Parties" && "Choose from our 12 carefully curated packages. Minimum 50 guests. Contact us to customise."}
                     {activeCategory === "Funerals" && "Choose from our carefully curated packages. Prepared with the highest standards of quality and care. Minimum 50 guests."}
                     {activeCategory === "BBQ & Grilled" && "Choose from our two signature Western BBQ packages. Perfect for outdoor events and private gatherings."}
                     {activeCategory === "Hoppers & Kottu" && "Choose from our two Hoppers & Kottu packages. Perfect for any occasion."}
@@ -164,7 +164,7 @@ export default function MenusPage() {
                 )}
 
                 {/* Wedding Grid */}
-                {activeCategory === "Weddings & Parties" && (
+                {activeCategory === "Celebrations & Parties" && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {weddingMenuPackages.map((pkg, index) => (
                       <div

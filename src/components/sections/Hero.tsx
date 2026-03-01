@@ -19,7 +19,7 @@ export function Hero() {
   return (
     <section ref={ref} className="relative h-screen w-full overflow-hidden">
       <motion.div
-        style={{ y, scale }}
+        style={{ y, scale, willChange: "transform" }}
         className="absolute inset-0 z-0"
       >
         <Image
@@ -34,9 +34,8 @@ export function Hero() {
       </motion.div>
 
       <motion.div
-        style={{ opacity }}
+        style={{ opacity, willChange: "opacity" }}
         className="relative z-10 flex h-full flex-col items-center justify-center text-center px-4"
-
       >
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
@@ -89,10 +88,10 @@ export function Hero() {
         className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-0"
       >
         <motion.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 80 }}
+          initial={{ opacity: 0, scaleY: 0 }}
+          animate={{ opacity: 1, scaleY: 1 }}
           transition={{ delay: 1.5, duration: 1.5, ease: "easeInOut" }}
-          className="w-[1px] bg-gradient-to-b from-aradana-gold/0 via-aradana-gold/50 to-aradana-gold/0"
+          className="w-[1px] h-20 origin-top bg-gradient-to-b from-aradana-gold/0 via-aradana-gold/50 to-aradana-gold/0"
         />
       </motion.div>
     </section>

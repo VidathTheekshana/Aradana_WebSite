@@ -21,8 +21,9 @@ export function CTA() {
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
+           viewport={{ once: true, amount: 0.2 }}
            transition={{ duration: 0.8 }}
+           style={{ willChange: "transform, opacity" }}
         >
           <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Seeing is believing.
@@ -34,8 +35,9 @@ export function CTA() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            style={{ willChange: "transform, opacity" }}
           >
             <Link 
               href="/events#visual-diary" 
