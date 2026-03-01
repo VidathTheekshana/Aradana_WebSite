@@ -49,6 +49,7 @@ export default function AboutPage() {
                 src="/images/localized/matching-about.jpg"
                 alt="Chefs Plating Food"
                 fill
+                sizes="100vw"
                 className="object-cover opacity-50"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-aradana-dark/70 via-aradana-dark/50 to-aradana-dark" />
@@ -73,7 +74,7 @@ export default function AboutPage() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-2xl"
+                            className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-xl"
                         >
                             About <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-aradana-gold via-white to-aradana-gold bg-[length:200%_auto] animate-gradient">
@@ -142,7 +143,8 @@ export default function AboutPage() {
                      src="/images/localized/about-detail.jpg"
                      alt="Visionary Cuisine"
                      fill
-                     className="object-cover rounded-2xl shadow-2xl relative z-10"
+                     sizes="(max-width: 768px) 100vw, 50vw"
+                     className="object-cover rounded-2xl shadow-xl relative z-10"
                    />
                </motion.div>
            </div>
@@ -182,7 +184,7 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
-                    className="bg-white/5 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+                    className="bg-white/[0.08] rounded-3xl p-8 md:p-12 border border-white/10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
                 >
                     <div className="space-y-6">
                         <h2 className="text-3xl font-bold text-white">Aradana Catering</h2>

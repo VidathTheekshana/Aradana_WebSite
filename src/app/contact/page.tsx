@@ -54,6 +54,7 @@ export default function ContactPage() {
                 src="/images/localized/contact-hero-bg.jpg"
                 alt="Professional Consultation"
                 fill
+                sizes="100vw"
                 priority
                 className="object-cover"
               />
@@ -85,7 +86,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.2 }}
-                className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-2xl"
+                className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-xl"
               >
                 Get In <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-aradana-gold via-white to-aradana-gold bg-[length:200%_auto] animate-gradient">
@@ -124,7 +125,7 @@ export default function ContactPage() {
                    whileInView={{ opacity: 1, y: 0 }}
                    viewport={{ once: true }}
                    transition={{ duration: 0.8 }}
-                   className="bg-white/5 backdrop-blur-sm p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden"
+                   className="bg-white/[0.08] p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden"
                 >
                     <h2 className="text-3xl font-bold text-white mb-8">Send Us a Message</h2>
                     <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
@@ -180,7 +181,7 @@ export default function ContactPage() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
-                          className="absolute inset-0 bg-aradana-dark/95 backdrop-blur-sm flex flex-col items-center justify-center text-center p-8 z-30"
+                          className="absolute inset-0 bg-aradana-dark/95 flex flex-col items-center justify-center text-center p-8 z-30"
                         >
                           <motion.div
                             initial={{ scale: 0.5, opacity: 0 }}
@@ -199,7 +200,7 @@ export default function ContactPage() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
-                          className="absolute inset-0 bg-aradana-dark/95 backdrop-blur-sm flex flex-col items-center justify-center text-center p-8 z-30"
+                          className="absolute inset-0 bg-aradana-dark/95 flex flex-col items-center justify-center text-center p-8 z-30"
                         >
                           <AlertCircle className="w-20 h-20 text-red-500 mb-6" />
                           <h3 className="text-2xl font-bold text-white mb-2">Submission Failed</h3>
@@ -285,7 +286,7 @@ export default function ContactPage() {
                                href="https://www.google.com/maps?q=6.8073953,79.9276547" 
                                target="_blank" 
                                rel="noopener noreferrer"
-                               className="pointer-events-auto bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-aradana-gold hover:text-black hover:border-aradana-gold transition-all duration-300 transform hover:scale-105"
+                               className="pointer-events-auto bg-white/[0.15] border border-white/20 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-aradana-gold hover:text-black hover:border-aradana-gold transition-all duration-300 transform hover:scale-105"
                              >
                                  Get Directions
                              </a>

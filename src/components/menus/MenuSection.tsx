@@ -29,6 +29,7 @@ export function MenuSection({ category, index, onViewAll }: MenuSectionProps) {
           src={category.image}
           alt={category.title}
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-aradana-dark/20 group-hover:bg-transparent transition-colors duration-500" />

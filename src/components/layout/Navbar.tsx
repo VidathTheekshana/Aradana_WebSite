@@ -61,9 +61,7 @@ export function Navbar() {
       }`}
       style={{
         zIndex: 100,
-        backgroundColor: scrolled || isMenuOpen ? "rgba(5, 5, 5, 0.98)" : "rgba(5, 5, 5, 0.8)",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
+        backgroundColor: scrolled || isMenuOpen ? "rgba(5, 5, 5, 0.98)" : "rgba(5, 5, 5, 0.85)",
         borderBottom: scrolled || isMenuOpen ? "1px solid rgba(255, 215, 0, 0.2)" : "1px solid transparent",
       }}
     >

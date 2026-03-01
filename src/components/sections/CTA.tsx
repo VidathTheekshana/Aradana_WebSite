@@ -12,6 +12,7 @@ export function CTA() {
           src="/images/localized/celebration-toast.jpg"
           alt="Culinary Excellence"
           fill
+          sizes="100vw"
           className="object-cover brightness-[0.4]"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-aradana-dark via-aradana-dark/50 to-transparent" />

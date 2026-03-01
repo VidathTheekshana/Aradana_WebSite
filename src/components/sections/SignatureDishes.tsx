@@ -86,7 +86,7 @@ function DishImage({ src, alt, className, yRange, progress }: { src: string, alt
     return (
         <motion.div style={{ y }} className={className}>
              <div className="relative aspect-[4/3] w-full h-full overflow-hidden rounded-lg">
-                <Image src={src} alt={alt} fill className="object-cover" />
+                <Image src={src} alt={alt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
              </div>
         </motion.div>
     )

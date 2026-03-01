@@ -37,6 +37,7 @@ export default function MenusPage() {
                     src="/images/localized/menu-hero-bg.jpg"
                     alt="Menu Background"
                     fill
+                    sizes="100vw"
                     className="object-cover brightness-50"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-aradana-dark" />
@@ -61,7 +62,7 @@ export default function MenusPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
-              className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-2xl"
+              className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-xl"
             >
               Our <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-aradana-gold via-white to-aradana-gold bg-[length:200%_auto] animate-gradient">
@@ -142,7 +143,7 @@ export default function MenusPage() {
                     {danaMenuPackages.map((pkg, index) => (
                       <div
                         key={pkg.id}
-                        className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-6 transition-all duration-300 group flex flex-col"
+                        className="bg-white/[0.08] border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-6 transition-all duration-300 group flex flex-col"
                       >
                         <div className="flex items-center gap-3 mb-5">
                           <div className="w-12 h-10 rounded-full bg-aradana-gold/10 border border-aradana-gold/30 flex items-center justify-center text-aradana-gold font-bold text-xs md:text-sm group-hover:bg-aradana-gold/20 transition-colors">
@@ -169,7 +170,7 @@ export default function MenusPage() {
                     {weddingMenuPackages.map((pkg, index) => (
                       <div
                         key={pkg.id}
-                        className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-6 transition-all duration-300 group flex flex-col"
+                        className="bg-white/[0.08] border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-6 transition-all duration-300 group flex flex-col"
                       >
                         <div className="flex items-center gap-3 mb-5">
                           <div className="w-10 h-10 rounded-full bg-aradana-gold/10 border border-aradana-gold/30 flex items-center justify-center text-aradana-gold font-bold text-sm group-hover:bg-aradana-gold/20 transition-colors">
@@ -196,7 +197,7 @@ export default function MenusPage() {
                     {funeralMenuPackages.map((pkg, index) => (
                       <div
                         key={pkg.id}
-                        className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-6 transition-all duration-300 group"
+                        className="bg-white/[0.08] border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-6 transition-all duration-300 group"
                       >
                         <div className="flex items-center gap-3 mb-5">
                           <div className="w-10 h-10 rounded-full bg-aradana-gold/10 border border-aradana-gold/30 flex items-center justify-center text-aradana-gold font-bold text-sm group-hover:bg-aradana-gold/20 transition-colors">
@@ -223,7 +224,7 @@ export default function MenusPage() {
                     {bbqMenuPackages.map((pkg, index) => (
                       <div
                         key={pkg.id}
-                        className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-8 transition-all duration-300 group"
+                        className="bg-white/[0.08] border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-8 transition-all duration-300 group"
                       >
                         <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
                           <div className="text-aradana-gold font-bold text-lg">{pkg.id}</div>
@@ -254,7 +255,7 @@ export default function MenusPage() {
                     {hoppersMenuPackages.map((pkg, index) => (
                       <div
                         key={pkg.id}
-                        className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-8 transition-all duration-300 group"
+                        className="bg-white/[0.08] border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-8 transition-all duration-300 group"
                       >
                         <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
                           <div className="text-aradana-gold font-bold text-lg">{pkg.id}</div>
@@ -281,7 +282,7 @@ export default function MenusPage() {
 
                 {/* Bites Menu */}
                 {activeCategory === "Bites & Appetizers" && (
-                   <div className="bg-white/5 backdrop-blur-sm border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-8 md:p-12 transition-all duration-300 group max-w-3xl mx-auto">
+                   <div className="bg-white/[0.08] border border-white/10 hover:border-aradana-gold/40 rounded-2xl p-8 md:p-12 transition-all duration-300 group max-w-3xl mx-auto">
                     <p className="text-aradana-gold/80 text-sm uppercase tracking-widest mb-6">Per 01 kg</p>
                     <ul className="space-y-3">
                       {bitesMenuItems.map((item, i) => (

@@ -85,7 +85,7 @@ export default function EventsPage() {
                    initial={{ opacity: 0, y: 20 }}
                    animate={{ opacity: 1, y: 0 }}
                    transition={{ duration: 0.8, delay: 0.2 }}
-                   className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-2xl"
+                   className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-xl"
                  >
                     Extraordinary <br/>
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-aradana-gold via-white to-aradana-gold bg-[length:200%_auto] animate-gradient">
@@ -188,7 +188,7 @@ export default function EventsPage() {
                      <Link href="/contact" className="bg-gradient-to-r from-aradana-gold to-aradana-amber text-aradana-dark font-bold px-12 py-5 rounded-full text-lg hover:shadow-[0_0_40px_rgba(255,215,0,0.4)] transition-all duration-300 transform hover:scale-105">
                         Book Your Event
                      </Link>
-                     <Link href="/menus" className="border border-white/20 text-white font-semibold px-12 py-5 rounded-full text-lg hover:bg-white/10 hover:border-white transition-all duration-300 backdrop-blur-sm">
+                     <Link href="/menus" className="border border-white/20 text-white font-semibold px-12 py-5 rounded-full text-lg hover:bg-white/10 hover:border-white transition-all duration-300 bg-black/20">
                         Explore Menus
                      </Link>
                  </div>

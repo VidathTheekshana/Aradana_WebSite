@@ -51,12 +51,13 @@ export function Ingredients() {
         </motion.div>
 
         {/* Visual Content */}
-        <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-2xl">
+        <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden shadow-xl">
            <motion.div style={{ y }} className="absolute inset-0 h-[120%] -top-[10%]">
              <Image
                src="/images/localized/chef-ingredients.jpg"
                alt="Chef preparing fresh ingredients"
                fill
+               sizes="(max-width: 768px) 100vw, 50vw"
                className="object-cover"
              />
              <div className="absolute inset-0 bg-gradient-to-t from-aradana-dark/80 to-transparent" />

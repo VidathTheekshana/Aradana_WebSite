@@ -26,6 +26,7 @@ export function Hero() {
           src="/images/localized/hero-spread.jpg"
           alt="Luxury Catering Spread"
           fill
+          sizes="100vw"
           priority
           className="object-cover"
         />
@@ -41,7 +42,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-2xl"
+          className="text-5xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-tight drop-shadow-xl"
         >
           Aradana <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-aradana-gold via-white to-aradana-gold bg-[length:200%_auto] animate-gradient">

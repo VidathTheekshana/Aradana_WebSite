@@ -57,7 +57,7 @@ export function Events() {
             >
                 <Link 
                   href="/contact"
-                  className="inline-block bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-aradana-dark transition-all duration-300"
+                  className="inline-block bg-white/[0.15] border border-white/20 text-white font-semibold px-8 py-3 rounded-full hover:bg-white hover:text-aradana-dark transition-all duration-300"
                 >
                     Plan Your Event
                 </Link>

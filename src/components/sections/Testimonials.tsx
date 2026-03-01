@@ -54,7 +54,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-aradana-gold/30 transition-colors duration-300 relative group"
+              className="bg-white/[0.08] p-8 rounded-2xl border border-white/10 hover:border-aradana-gold/30 transition-colors duration-300 relative group"
             >
               <div className="flex justify-between items-start mb-6">
                 <Quote className="text-aradana-gold w-8 h-8 opacity-80" />
