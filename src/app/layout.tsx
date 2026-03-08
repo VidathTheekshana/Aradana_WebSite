@@ -43,14 +43,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <head>
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#000000" />
+        <meta
+          name="google-site-verification"
+          content="w6v3HIc2U8tQtNSSWtxB854WU6YCz-XevMxyny4QwHE"
+        />
         <meta property="og:title" content="Aradana Catering" />
         <meta property="og:description" content="Bespoke culinary experiences crafted for unforgettable events." />
         <meta property="og:image" content="/favicon.ico" />
         <meta name="twitter:card" content="summary_large_image" />
       </head>
+
       <body
         suppressHydrationWarning
         className={`${inter.variable} ${playfair.variable} bg-aradana-dark text-white antialiased`}
