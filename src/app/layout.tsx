@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { ResponsiveMotionToggle } from "@/components/layout/ResponsiveMotionToggle";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <WhatsAppButton />
+        <GoogleAnalytics gaId="G-HSQDTC25BZ" />
       </body>
     </html>
   );
