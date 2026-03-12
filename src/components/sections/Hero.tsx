@@ -46,7 +46,7 @@ export function Hero() {
         >
           Aradana <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-aradana-gold via-white to-aradana-gold bg-[length:200%_auto] animate-gradient">
-            Caters
+            Caterers
           </span>
         </motion.h1>
 

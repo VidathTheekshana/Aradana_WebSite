@@ -21,7 +21,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Aradana Catering | Culinary Excellence",
+  title: "Aradana Caterers",
   description: "Bespoke culinary experiences crafted for unforgettable events. A luxury catering service.",
   metadataBase: new URL('https://aradanacaterers.com'),
   alternates: {
