@@ -1,86 +1,57 @@
-# Aradana Caterers Website
+🥘 Aradana Caterers Website
+A premium, high-performance luxury catering platform.
 
-A modern, responsive luxury catering website built with Next.js and React.
+✨ Overview
+A modern, responsive web application built to showcase luxury catering services. Features a sleek dark-mode aesthetic, smooth animations, and a fully optimized user journey from menu browsing to booking.
 
-## Live Site
-- **Production:** https://aradanacaterers.com
+🛠️ Tech Stack
+Framework: Next.js 14+ (App Router) 🚀
 
-## Tech Stack
-- **Next.js** (App Router)
-- **React**
-- **TypeScript**
-- **Tailwind CSS**
-- **Framer Motion**
-- **Google Analytics (GA4)** via `@next/third-parties/google`
+Library: React ⚛️
 
-## Features
-- Elegant hero section with smooth parallax animation
-- Responsive navigation and mobile-friendly UI
-- Menu, events, about, and contact pages
-- Optimized images using `next/image`
-- SEO-ready metadata and favicon support
-- Google Search Console verification meta integration
-- GA4 tracking enabled
+Language: TypeScript 📘
 
-## Project Structure
-```text
+Styling: Tailwind CSS 🎨
+
+Animations: Framer Motion ✨
+
+Analytics: Google Analytics (GA4) 📊
+
+🌟 Key Features
+🖼️ Luxury Hero Section: Parallax effects and high-fidelity brand imagery.
+
+📱 Mobile-First Design: Fully responsive UI for seamless browsing on any device.
+
+📜 Dynamic Menus: Detailed sections for menus, events, and about us.
+
+🚀 Performance Optimized: Lightning-fast loading using next/image and SEO best practices.
+
+🔍 SEO & Analytics: Integrated Google Search Console and GA4 tracking (G-HSQDTC25BZ).
+
+🔒 Secure Hosting: SSL-protected deployment via Vercel.
+
+📂 Project Structure
+Plaintext
 src/
-  app/
-    layout.tsx
-    page.tsx
-    menus/
-    events/
-    about/
-    contact/
-  components/
-    layout/
-    sections/
-    ui/
-public/
-  images/
-  favicon.ico
-  site.webmanifest
-```
-
-## Getting Started
-
-### 1) Install dependencies
-```bash
+  ├── app/            # Next.js App Router (Layouts & Pages) 📁
+  ├── components/     # Reusable UI & Section components 🧩
+  └── public/         # Optimized Assets & Favicons 🖼️
+🚀 Getting Started
+1️⃣ Setup
+Bash
 npm install
-```
-
-### 2) Run development server
-```bash
+2️⃣ Development
+Bash
 npm run dev
-```
+Navigate to http://localhost:3000 🌐
 
-Open: `http://localhost:3000`
-
-### 3) Build for production
-```bash
+3️⃣ Production
+Bash
 npm run build
 npm start
-```
+📈 Deployment & CI/CD
+Platform: Deployed on Vercel ⚡
 
-## Analytics
-Google Analytics is integrated in `src/app/layout.tsx`:
+Automation: GitHub-integrated CI/CD pipeline (Auto-deploy on push).
 
-- **Measurement ID:** `G-HSQDTC25BZ`
-
-## SEO / Verification
-Google site verification meta tag is included in `src/app/layout.tsx`.
-
-## Deployment
-This project is deployed on **Vercel** with:
-- Custom domain (`aradanacaterers.com`)
-- HTTPS / SSL enabled
-- Automatic CI/CD from GitHub
-
-## Scripts
-- `npm run dev` – Start local development
-- `npm run build` – Production build
-- `npm start` – Run production server
-- `npm run lint` – Run lint checks
-
-## Author
-Developed for **Aradana Caterers**.
+Domain: Custom domain aradanacaterers.com with global CDN.
