@@ -1,57 +1,81 @@
-🥘 Aradana Caterers Website
-A premium, high-performance luxury catering platform.
+# Aradana Caterers Website
 
-✨ Overview
-A modern, responsive web application built to showcase luxury catering services. Features a sleek dark-mode aesthetic, smooth animations, and a fully optimized user journey from menu browsing to booking.
+A premium, high-performance web platform for a luxury catering service.
 
-🛠️ Tech Stack
-Framework: Next.js 14+ (App Router) 🚀
+---
 
-Library: React ⚛️
+## Overview
 
-Language: TypeScript 📘
+A modern, responsive web application built to showcase luxury catering services. The site features a dark-mode aesthetic, smooth animations, and an optimized user journey from menu browsing to booking.
 
-Styling: Tailwind CSS 🎨
+---
 
-Animations: Framer Motion ✨
+## Tech Stack
 
-Analytics: Google Analytics (GA4) 📊
+| Layer       | Technology                          |
+|-------------|-------------------------------------|
+| Framework   | Next.js 14+ (App Router)            |
+| Library     | React                               |
+| Language    | TypeScript                          |
+| Styling     | Tailwind CSS                        |
+| Animations  | Framer Motion                       |
+| Analytics   | Google Analytics (GA4)              |
 
-🌟 Key Features
-🖼️ Luxury Hero Section: Parallax effects and high-fidelity brand imagery.
+---
 
-📱 Mobile-First Design: Fully responsive UI for seamless browsing on any device.
+## Key Features
 
-📜 Dynamic Menus: Detailed sections for menus, events, and about us.
+- **Luxury Hero Section** — Parallax effects and high-fidelity brand imagery.
+- **Mobile-First Design** — Fully responsive UI for seamless browsing on any device.
+- **Dynamic Menus** — Detailed sections for menus, events, and about us.
+- **Performance Optimized** — Lightning-fast loading using `next/image` and SEO best practices.
+- **SEO & Analytics** — Integrated Google Search Console and GA4 tracking.
+- **Secure Hosting** — SSL-protected deployment via Vercel.
 
-🚀 Performance Optimized: Lightning-fast loading using next/image and SEO best practices.
+---
 
-🔍 SEO & Analytics: Integrated Google Search Console and GA4 tracking (G-HSQDTC25BZ).
+## Project Structure
 
-🔒 Secure Hosting: SSL-protected deployment via Vercel.
-
-📂 Project Structure
-Plaintext
+```
 src/
-  ├── app/            # Next.js App Router (Layouts & Pages) 📁
-  ├── components/     # Reusable UI & Section components 🧩
-  └── public/         # Optimized Assets & Favicons 🖼️
-🚀 Getting Started
-1️⃣ Setup
-Bash
-npm install
-2️⃣ Development
-Bash
-npm run dev
-Navigate to http://localhost:3000 🌐
+  ├── app/            # Next.js App Router (layouts & pages)
+  ├── components/     # Reusable UI and section components
+  └── public/         # Optimized assets and favicons
+```
 
-3️⃣ Production
-Bash
+---
+
+## Getting Started
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) installed.
+
+### Installation
+
+```bash
+npm install
+```
+
+### Development
+
+```bash
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Production Build
+
+```bash
 npm run build
 npm start
-📈 Deployment & CI/CD
-Platform: Deployed on Vercel ⚡
+```
 
-Automation: GitHub-integrated CI/CD pipeline (Auto-deploy on push).
+---
 
-Domain: Custom domain aradanacaterers.com with global CDN.
+## Deployment & CI/CD
+
+- **Platform:** Deployed on [Vercel](https://vercel.com).
+- **Automation:** GitHub-integrated CI/CD pipeline with automatic deployment on push.
+- **Domain:** [aradanacaterers.com](https://aradanacaterers.com) with global CDN.
